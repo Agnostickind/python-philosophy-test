@@ -1,0 +1,356 @@
+/* =========================================================
+   THE GREAT LIBRARY OF PHILOSOPHY — HOME PAGE REFINEMENT
+   Loads AFTER style.css on index.html only.
+   No HTML structure changes required.
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+:root {
+  --home-measure: 68ch;
+  --home-lead: 1.75;
+  --home-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --home-rule-gold: linear-gradient(to right, transparent, var(--gold), transparent);
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+}
+
+.home-hero h1,
+.start-here h2,
+.daily-life h2,
+.fact-box h2,
+.quotes h2,
+.profile-card h2,
+.quote h2 {
+  text-wrap: balance;
+}
+
+.daily-life p,
+.start-here-box p {
+  text-wrap: pretty;
+}
+
+/* HERO — actual HTML uses .home-hero, not .hero */
+.home-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.home-hero .hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+}
+
+.home-hero h1 {
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+}
+
+.home-hero .hero-content > p {
+  
+  font-size: 1.15rem;
+  color: var(--muted-light);
+  max-width: 56ch;
+  border-left: 2px solid var(--gold);
+  padding-left: 1.2rem;
+}
+
+
+.home-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(211, 165, 101, 0.06), transparent 45%),
+    radial-gradient(circle at 80% 70%, rgba(211, 165, 101, 0.05), transparent 40%);
+}
+
+/* START HERE — actual HTML uses .start-here */
+.start-here-box h2 {
+  text-wrap: balance;
+  line-height: 1.15;
+}
+
+.start-here-box p {
+  max-width: 62ch;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: var(--home-lead);
+}
+
+/* DAILY-LIFE sections — all four home prose sections use this class */
+.daily-life {
+  padding-block: clamp(3.5rem, 8vw, 6.5rem);
+}
+
+.daily-life h2 {
+  line-height: 1.15;
+}
+
+.daily-life p {
+  max-width: var(--home-measure);
+  margin-left: auto;
+  margin-right: auto;
+  line-height: var(--home-lead);
+  hyphens: auto;
+  hyphenate-limit-chars: 8 4 4;
+}
+
+.daily-life h3 {
+  line-height: 1.3;
+}
+
+.daily-life a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+/* EXISTING DIVIDER */
+.philosophy-divider {
+  opacity: 0.75;
+}
+
+/* ORIGIN / FACT SECTION — actual HTML selectors */
+.fact-box h2 {
+  text-wrap: balance;
+  line-height: 1.15;
+}
+
+.word-part {
+  transition:
+    transform 0.35s var(--home-ease),
+    box-shadow 0.35s var(--home-ease),
+    border-color 0.35s ease;
+}
+
+.word-part:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.meaning-box {
+  transition:
+    box-shadow 0.35s var(--home-ease),
+    border-color 0.35s ease;
+}
+
+.meaning-box p {
+  max-width: 62ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* QUOTES — actual HTML uses .quotes */
+.quotes {
+  padding-block: clamp(3.5rem, 8vw, 6.5rem);
+}
+
+.quotes h2 {
+  line-height: 1.15;
+}
+
+.quotes blockquote {
+  max-width: 62ch;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.65;
+}
+
+/* PROFILE — actual HTML uses .profile-card */
+.profile-card h2 {
+  line-height: 1.15;
+}
+
+.profile-card p {
+  text-wrap: pretty;
+}
+
+.profile-info img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* QUOTE OF THE DAY — actual HTML uses .quote */
+.quote {
+  padding-block: clamp(3.5rem, 8vw, 6.5rem);
+}
+
+.quote h2 {
+  line-height: 1.15;
+}
+
+.quote blockquote {
+  max-width: 62ch;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.65;
+}
+
+/* FOCUS */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 3px;
+}
+
+/* TOUCH TARGETS */
+@media (pointer: coarse) {
+  .menu-toggle,
+  .appearance-toggle,
+  .search-toggle,
+  .language-toggle {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+/* RESPONSIVE HOME REFINEMENT */
+@media (max-width: 900px) {
+  .home-hero .hero-content > p {
+    max-width: 60ch;
+  }
+
+  .daily-life p,
+  .meaning-box p {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 620px) {
+  .home-hero h1 {
+    font-size: clamp(2.1rem, 9vw, 3rem);
+  }
+
+  .daily-life,
+  .quotes,
+  .quote {
+    padding-block: 3.5rem;
+  }
+
+  .daily-life p {
+    line-height: 1.75;
+  }
+
+  .start-here-box {
+    max-width: 100%;
+  }
+
+  .fact-box {
+    padding-inline: 1.4rem;
+  }
+
+  .quotes blockquote,
+  .quote blockquote {
+    font-size: 1.05rem;
+  }
+}
+
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .word-part,
+  .meaning-box {
+    transition: none !important;
+  }
+
+  .word-part:hover {
+    transform: none;
+  }
+}
+
+/* DARK THEME COMPATIBILITY
+   Existing theme variables remain responsible for colors. */
+body.theme-dark .home-hero::after {
+  opacity: 0.65;
+}
+
+body.theme-dark .daily-life a {
+  text-decoration-color: var(--gold-bright);
+}
+
+body.theme-dark .quotes blockquote,
+body.theme-dark .quote blockquote {
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.18);
+}
+
+.daily-life a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* ---------------------------------------------------------
+   LIGHT THEME — IMPROVE PROSE READABILITY
+   Keep the existing Cormorant Garamond style, but give
+   body text slightly more weight and contrast.
+   --------------------------------------------------------- */
+
+body:not(.theme-dark) .daily-life p {
+  color: #332f29;
+  font-weight: 600;
+}
+
+body:not(.theme-dark) .daily-life li {
+  color: #332f29;
+  font-weight: 500;
+}
+
+body:not(.theme-dark) .daily-life a {
+  color: #8a5a24;
+  font-weight: 600;
+}
+
+/* Skip link — hidden until keyboard focus */
+.skip-link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 99999;
+
+  padding: 0.7rem 1.2rem;
+
+  background: var(--theme-ink-bg, #14161f);
+  color: var(--light-text, #eee7d6);
+
+  font-family: var(--mono, monospace);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+
+  border: 1px solid var(--gold);
+  border-radius: 6px;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateY(-150%);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+
+/* Only appear when reached with keyboard */
+.skip-link:focus,
+.skip-link:focus-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+body:not(.theme-dark) .daily-life p {
+  color: #29251f;
+  font-weight: 600;
+}

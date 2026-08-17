@@ -1,87 +1,38 @@
-from flask import Flask, request
+from flask import Flask, render_template, abort, send_from_directory
+import os
 
-app = Flask(__name__)
+app = Flask(
+    __name__,
+    static_folder="static",
+    static_url_path=""
+)
 
-philosophers = {
-    "plato": "Plato was an ancient Greek philosopher and a student of Socrates.",
-    "socrates": "Socrates was an ancient Greek philosopher known for the Socratic method of questioning.",
-    "aristotle": "Aristotle was a Greek philosopher and student of Plato who wrote on logic, ethics, politics, and natural philosophy.",
-    "nietzsche": "Friedrich Nietzsche was a German philosopher known for his work on morality, culture, and the idea of the Übermensch.",
-    "kant": "Immanuel Kant was a German philosopher whose work strongly influenced modern epistemology and ethics.",
-}
 
 @app.route("/")
 def home():
-    name = request.args.get("name", "").strip().lower()
+    return render_template("index.html")
 
-    result = ""
 
-    if name:
-        result = philosophers.get(
-            name,
-            "I don't have information about that philosopher yet."
-        )
+@app.route("/<page>.html")
+def page(page):
+    template_name = page + ".html"
+    template_path = os.path.join(app.template_folder, template_name)
 
-    return f"""
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>Python Philosophy Explorer</title>
-        <style>
-            body {{
-                font-family: Arial, sans-serif;
-                max-width: 700px;
-                margin: 80px auto;
-                padding: 20px;
-                line-height: 1.6;
-            }}
+    if not os.path.isfile(template_path):
+        abort(404)
 
-            input {{
-                padding: 10px;
-                width: 60%;
-                font-size: 16px;
-            }}
+    return render_template(template_name)
 
-            button {{
-                padding: 10px 18px;
-                font-size: 16px;
-                cursor: pointer;
-            }}
 
-            .result {{
-                margin-top: 30px;
-                padding: 20px;
-                border: 1px solid #ccc;
-                border-radius: 10px;
-            }}
-        </style>
-    </head>
+@app.route("/<path:filename>")
+def static_files(filename):
+    file_path = os.path.join(app.static_folder, filename)
 
-    <body>
+    if not os.path.isfile(file_path):
+        abort(404)
 
-        <h1>Python Philosophy Explorer</h1>
-
-        <p>
-            This page is powered by Python and Flask.
-        </p>
-
-        <form method="GET">
-            <input
-                type="text"
-                name="name"
-                placeholder="Enter a philosopher..."
-                value="{name}"
-            >
-
-            <button type="submit">Search</button>
-        </form>
-
-        {"<div class='result'><strong>" + name.title() + "</strong><p>" + result + "</p></div>" if name else ""}
-
-    </body>
-    </html>
-    """
+    return send_from_directory(app.static_folder, filename)
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

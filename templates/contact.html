@@ -1,0 +1,444 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Get in touch with the Library of Philosophy — send feedback, suggest a philosopher or book, or ask a question.">
+
+<meta property="og:title" content="Φ Contact | Φ The Great Library of Philosophy">
+<meta property="og:description" content="Get in touch with the Library of Philosophy — send feedback, suggest a philosopher or book, or ask a question.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://agnostickind.github.io/philosophy-website/contact.html">
+<meta property="og:image" content="https://agnostickind.github.io/philosophy-website/images/og-preview.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="Kavya Jain">
+<meta name="keywords" content="contact philosophy library, philosophy website contact">
+<meta name="theme-color" content="#b88a44">
+<meta name="twitter:title" content=" Φ Contact | Φ The Great Library of Philosophy">
+<meta name="twitter:description" content="Get in touch with the Library of Philosophy — send feedback, suggest a philosopher or book, or ask a question.">
+<meta name="twitter:image" content="https://agnostickind.github.io/philosophy-website/images/og-preview.jpg">
+
+<title> Φ Contact | Φ The Great Library of Philosophy</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+        <h2>Φ Philosophy</h2>
+    </a>
+
+    <div class="nav-links">
+
+        <a href="index.html">Home</a>
+        <a href="history.html">History</a>
+        <a href="thinkers.html">Thinkers</a>
+        <a href="branches.html">Branches</a>
+        <a href="schools.html">Schools</a>
+        <a href="books.html">Books</a>
+        <a href="world-literature.html">Literature</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+
+    </div>
+
+    <div class="nav-tools">
+
+    <!-- SEARCH -->
+    <div class="search-container">
+
+        <button class="search-toggle"
+                aria-label="Open search"
+                aria-expanded="false">
+            <span class="search-icon" aria-hidden="true"></span>
+        </button>
+
+        <div class="search-box">
+
+            <input
+                type="search"
+                id="site-search"
+                placeholder="Search philosophy..."
+                aria-label="Search this website"
+            >
+
+            <div class="search-results" id="search-results"></div>
+
+        </div>
+
+    </div>
+
+<button class="appearance-toggle" id="appearanceToggle" type="button"
+        aria-label="Open reading and appearance settings"
+        aria-expanded="false">
+    Aa
+</button>
+    <!-- LANGUAGE -->
+    <div class="language-container">
+
+         <button class="language-toggle"
+            aria-label="Choose language"
+            aria-expanded="false">
+
+        <span class="language-symbol">𝐀文</span>
+
+    </button>
+        <div class="language-box">
+
+            <label>Language</label>
+<button class="language-option" data-lang="en">
+            English
+        </button>
+            <button class="language-option" data-lang="hi">
+                हिन्दी
+            </button>
+
+            <button class="language-option" data-lang="es">
+                Español
+            </button>
+
+            <button class="language-option" data-lang="fr">
+                Français
+            </button>
+
+            <button class="language-option" data-lang="de">
+                Deutsch
+            </button>
+
+            <button class="language-option" data-lang="ja">
+                日本語
+            </button>
+
+            <button class="language-option" data-lang="ar">
+                العربية
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+    <!-- ================= MOBILE MENU ================= -->
+
+    <button class="menu-toggle"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<header class="home-hero">
+
+<div class="hero-content">
+
+<h1>Get in Touch</h1>
+
+<p>
+
+Questions, feedback, or a philosopher you think belongs on this site?
+I'd genuinely like to hear from you.
+
+</p>
+
+</div>
+
+</header>
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact-wrap">
+
+<!-- ---- form ---- -->
+
+<div class="contact-form-card">
+
+<h2>Send a Message</h2>
+
+<!--
+  Connected to Formspree (formspree.io) — endpoint below.
+  Submission is handled via fetch() in script.js so the page
+  never navigates away to Formspree's default page; visitors
+  stay on this styled confirmation instead.
+-->
+
+<form id="contact-form" class="contact-form" action="https://formspree.io/f/mnjegjeg" method="POST" novalidate>
+
+<input type="hidden" name="_subject" value="New message from the Philosophy Library contact form">
+
+<div class="form-group">
+<label for="name">Name</label>
+<input type="text" id="name" name="name" placeholder="Your name" required>
+<span class="form-error"></span>
+</div>
+
+<div class="form-group">
+<label for="email">Email</label>
+<input type="email" id="email" name="email" placeholder="you@example.com" required>
+<span class="form-error"></span>
+</div>
+
+<div class="form-group">
+<label for="subject">Subject</label>
+<input type="text" id="subject" name="subject" placeholder="What's this about?" required>
+<span class="form-error"></span>
+</div>
+
+<div class="form-group">
+<label for="message">Message</label>
+<textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+<span class="form-error"></span>
+</div>
+
+<button type="submit" class="form-submit">Send Message</button>
+
+<p class="form-success" role="status"></p>
+
+</form>
+
+</div>
+
+<!-- ---- info ---- -->
+
+<div class="contact-info-card">
+
+<h2>Contact Details</h2>
+
+<ul class="contact-details">
+
+<li>
+
+<span class="contact-label">Email</span>
+<a href="mailto:kavyajn02@gmail.com">kavyajn02@gmail.com</a>
+</li>
+
+<li>
+
+<span class="contact-label">Response Time</span>
+<span>Usually within 2–3 days</span>
+
+</li>
+
+<li>
+
+<span class="contact-label">Best For</span>
+<span>Feedback, corrections, or suggestions for new pages</span>
+
+</li>
+
+</ul>
+
+<hr>
+
+<h3>Follow Along</h3>
+
+<div class="social-links">
+
+<a href="https://wa.me/917877219689" class="contact-btn whatsapp">
+    💬 WhatsApp
+</a>
+<a href="https://www.instagram.com/" target="_blank">📸Instagram</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FAQ ================= -->
+
+<section class="faq">
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="faq-item">
+
+<h3>Is this website free to use?</h3>
+
+<p>Yes — everything on this site, including the books, thinkers, and schools of philosophy, is free to browse.</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>Can I suggest a philosopher or book to add?</h3>
+
+<p>Absolutely. Send a message using the form above with the name and a short reason why you think it belongs here.</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>Did you write all the content yourself?</h3>
+
+<p>The site is written and maintained by one person as a personal project — corrections and suggestions are always welcome.</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>Do you take content requests for specific branches or schools?</h3>
+
+<p>Yes, within reason. Let me know what's missing and I'll look into adding it in a future update.</p>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+<h2>Φ Philosophy</h2>
+
+<p>
+
+A digital library dedicated to exploring the ideas,
+books and thinkers that shaped human civilization.
+
+</p>
+
+<div class="footer-links">
+
+<a href="index.html">Home</a>
+
+<a href="history.html">History</a>
+
+<a href="thinkers.html">Thinkers</a>
+
+<a href="branches.html">Branches</a>
+
+<a href="schools.html">Schools</a>
+
+<a href="books.html">Books</a>
+
+<a href="world-literature.html">Literature</a>
+
+<a href="blog.html">Blog</a>
+
+<a href="contact.html">Contact</a>
+
+</div>
+
+<hr>
+
+<p>
+
+© 2026 Philosophy Library
+Designed &amp; Developed by Kavya Jain
+
+</p>
+
+</footer>
+
+<script src="script.js" defer></script>
+<div class="appearance-panel" id="appearancePanel" aria-hidden="true">
+
+    <div class="appearance-panel-header">
+        <div>
+            <span class="appearance-label">READING</span>
+            <h3>Appearance</h3>
+        </div>
+
+        <button class="appearance-close" id="appearanceClose" type="button"
+                aria-label="Close appearance settings">
+            ×
+        </button>
+    </div>
+
+
+    <div class="appearance-section">
+
+        <h4>Text Size</h4>
+
+        <div class="appearance-options text-size-options">
+            <button type="button" data-text-size="small">Small</button>
+            <button type="button" data-text-size="standard" class="active">Standard</button>
+            <button type="button" data-text-size="large">Large</button>
+        </div>
+
+    </div>
+
+
+    <div class="appearance-section">
+
+        <h4>Page Width</h4>
+
+        <div class="appearance-options width-options">
+            <button type="button" data-page-width="standard" class="active">
+                Standard
+            </button>
+
+            <button type="button" data-page-width="wide">
+                Wide
+            </button>
+        </div>
+
+    </div>
+
+
+    <div class="appearance-section">
+
+        <h4>Theme</h4>
+
+        <div class="appearance-options theme-options">
+            <button type="button" data-theme="automatic">
+                Auto
+            </button>
+
+            <button type="button" data-theme="light" class="active">
+                Light
+            </button>
+
+            <button type="button" data-theme="dark">
+                Dark
+            </button>
+        </div>
+
+    </div>
+
+
+    <div class="appearance-section">
+
+        <h4>Reading Spacing</h4>
+
+        <div class="appearance-options spacing-options">
+            <button type="button" data-spacing="standard" class="active">
+                Standard
+            </button>
+
+            <button type="button" data-spacing="comfortable">
+                Comfortable
+            </button>
+        </div>
+
+    </div>
+
+
+    <div class="appearance-footer">
+        <button id="resetAppearance" type="button">
+            Reset preferences
+        </button>
+    </div>
+
+</div>
+</body>
+</html>
